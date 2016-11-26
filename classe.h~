@@ -1,0 +1,78 @@
+/*-------------------------------------------------------------------------
+***************************************************************************
+* @file classe.h
+* @author Isaac Jesus da Silva - FEI
+* @version V0.0.3
+* @created 04/10/2014
+* @Modified 14/11/2014
+* @e-mail isaac25silva@yahoo.com.br
+***************************************************************************
+Arquivo de cabeçalho que contem a classe da RNA
+/------------------------------------------------------------------------*/
+#ifndef CLASSE_H
+#define CLASSE_H
+#include <vector>
+#include <fstream>
+
+class MatrixVector
+{
+    	public:
+    	/*! Atributo utilizado para guardar valores em vetores. */
+		std::vector<double> vetor;
+};
+
+//-------------------------------------------------------------------------
+class Matrix2d
+{
+    	public:
+    	/*! Atributo utilizado para guardar valores em vetores. */
+		std::vector<double> action;
+
+	Matrix2d(): action(4,0) {} //inicializa o vetor com 100 posições e valor 0
+};
+
+//-------------------------------------------------------------------------
+class Matrix3d: public MatrixVector
+{
+    	public:
+    	/*! Atributo utilizado para guardar valores em matriz. */
+		MatrixVector action[4];
+};
+
+//-------------------------------------------------------------------------
+class SGW: private Matrix3d, private Matrix2d
+{
+	public:
+
+    	/*! Construtor. */
+    	SGW(){ srand (time(NULL));};
+    	/*! Destrutor. */
+    	//~RNA();
+
+	void smallGriWorld(unsigned int row, unsigned int col);
+
+	private:
+
+//        /*!Método para abrir o arquivo e carregar para a matriz.
+//	* @param matrix[] - Matriz para carregar os valores da tabela.
+//	* @param filename - Nome do arquivo que deseja carregar.
+//	* @param numCol - Número de colunas do arquivo.
+//        * @return Não retorna valores. */
+//	unsigned int openFiletoGetQvalueVector(MatrixVector matrix[], unsigned int numCol, std::string fileName);
+
+
+//        /*!Método que salva os valores do treinamento no arquivo.*/
+//	void saveValue( Matrix3d W[], MatrixVector Ws[], double Wo, int numNeuronios, int numNeuroFinal, double alphaF, double nF, int numCamadaEscondidaF, unsigned int numEntradasF, unsigned int iteracoes, std::string fileName);
+
+//        /*!Método que abre o arquivo que contem os valores de W.*/	
+//	void openValueW( Matrix3d W[], MatrixVector Ws[], double &Wo, int &numNeuronios, int &numNeuroFinal, double &alphaF, double &nF, int &numCamadaEscondidaF, unsigned int &numEntradasF, unsigned int &iteracoes, std::string fileName);
+
+//	/*!Método que abre o arquivo e carrega apenas os parâmetros da rede.*/
+//	void openParametros( double &Wo, int &numNeuronios, int &numNeuroFinal, double &alphaF, double &nF, int &numCamadaEscondidaF, unsigned int &numEntradasF, unsigned int &iteracoes, unsigned int &numSaidas, std::string fileName);
+
+
+};
+ 
+/// \example classe.cpp
+ 
+#endif

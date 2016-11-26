@@ -1,0 +1,19 @@
+#include <iostream>
+#include <stdio.h>
+#include "classe.h"
+
+using namespace std;
+
+int main()
+{
+
+SGW sgm;
+
+sgm.smallGriWorld();
+
+  return 0;
+}
+
+
+
+
